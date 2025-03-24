@@ -225,16 +225,15 @@ export function PdfChatInterface() {
                   {messages.map((message, index) => (
                     <div key={index} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
                       <div
-                        className={`flex gap-3 max-w-[80%] ${
-                          message.role === "user"
+                        className={`flex gap-3 max-w-[80%] ${message.role === "user"
                             ? "flex-row-reverse"
                             : message.role === "system"
                               ? "w-full max-w-full"
                               : ""
-                        }`}
+                          }`}
                       >
                         {message.role !== "system" && (
-                          <Avatar className={`h-8 w-8 ${message.role === "user" ? "bg-primary" : "bg-muted"}`}>
+                          <Avatar className={`h-8 w-8 ${message.role === "user" ? "bg-primary" : "bg-muted"} flex items-center justify-center`}>
                             {message.role === "user" ? (
                               <User className="h-4 w-4 text-primary-foreground" />
                             ) : (
@@ -243,13 +242,12 @@ export function PdfChatInterface() {
                           </Avatar>
                         )}
                         <div
-                          className={`p-3 rounded-lg ${
-                            message.role === "user"
+                          className={`p-3 rounded-lg ${message.role === "user"
                               ? "bg-primary text-primary-foreground"
                               : message.role === "system"
                                 ? "bg-muted/50 text-muted-foreground text-sm w-full text-center"
                                 : "bg-muted"
-                          }`}
+                            }`}
                         >
                           {message.content}
                         </div>
@@ -258,8 +256,8 @@ export function PdfChatInterface() {
                   ))}
                   {isLoading && (
                     <div className="flex justify-start">
-                      <div className="flex gap-3 max-w-[80%]">
-                        <Avatar className="h-8 w-8 bg-muted">
+                      <div className="flex gap-3 max-w-[80%] items-start">
+                        <Avatar className="h-8 w-8 bg-muted flex items-center justify-center">
                           <Bot className="h-4 w-4" />
                         </Avatar>
                         <div className="p-3 rounded-lg bg-muted flex items-center gap-2">

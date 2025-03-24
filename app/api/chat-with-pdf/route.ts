@@ -1,6 +1,6 @@
 import { generateText } from "ai"
 import { createAnthropic } from "@ai-sdk/anthropic"
-import { openai } from "@ai-sdk/openai"
+import { createOpenAI } from "@ai-sdk/openai"
 
 export async function POST(request: Request) {
   try {
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
       }))
 
       result = await generateText({
-        model: anthropicClient("claude-3-5-sonnet"),
+        model: anthropicClient("claude-3-5-sonnet-20241022"),
         messages: [
           ...messages,
           {
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
       })
     } else if (provider === "openai") {
       // Use OpenAI with user's API key
-      const openaiClient = openai({
+      const openaiClient = createOpenAI({
         apiKey: apiKey,
       })
 
