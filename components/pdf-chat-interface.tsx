@@ -226,10 +226,10 @@ export function PdfChatInterface() {
                     <div key={index} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
                       <div
                         className={`flex gap-3 max-w-[80%] ${message.role === "user"
-                            ? "flex-row-reverse"
-                            : message.role === "system"
-                              ? "w-full max-w-full"
-                              : ""
+                          ? "flex-row-reverse"
+                          : message.role === "system"
+                            ? "w-full max-w-full"
+                            : ""
                           }`}
                       >
                         {message.role !== "system" && (
@@ -243,10 +243,10 @@ export function PdfChatInterface() {
                         )}
                         <div
                           className={`p-3 rounded-lg ${message.role === "user"
-                              ? "bg-primary text-primary-foreground"
-                              : message.role === "system"
-                                ? "bg-muted/50 text-muted-foreground text-sm w-full text-center"
-                                : "bg-muted"
+                            ? "bg-primary text-primary-foreground"
+                            : message.role === "system"
+                              ? "bg-muted/50 text-muted-foreground text-sm w-full text-center"
+                              : "bg-muted"
                             }`}
                         >
                           {message.content}

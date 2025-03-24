@@ -116,7 +116,7 @@ export function AnimatedLoading({ message = "Analyzing PDF and generating questi
 
       {/* Progress bar */}
       <motion.div
-        className="h-1 w-48 overflow-hidden rounded-full bg-muted"
+        className="h-1 w-[90%] mt-8 overflow-hidden rounded-full bg-muted"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
