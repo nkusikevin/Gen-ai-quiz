@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 220 14% 4%;
+
+    --card: 40 33% 98%;
+    --card-foreground: 220 14% 4%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 220 14% 4%;
+
+    --primary: 215 40% 47%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 160 23% 46%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 10% 92%;
+    --muted-foreground: 220 5% 45%;
+
+    --accent: 210 10% 92%;
+    --accent-foreground: 220 14% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 5% 90%;
+    --input: 220 5% 90%;
+    --ring: 215 40% 47%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 14% 4%;
+    --foreground: 40 33% 98%;
+
+    --card: 220 14% 8%;
+    --card-foreground: 40 33% 98%;
+
+    --popover: 220 14% 8%;
+    --popover-foreground: 40 33% 98%;
+
+    --primary: 215 40% 57%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 160 23% 36%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 212 6% 15%;
+    --muted-foreground: 215 5% 65%;
+
+    --accent: 212 6% 15%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 74% 42%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 212 6% 15%;
+    --input: 212 6% 15%;
+    --ring: 215 40% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Japanese-inspired typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-light tracking-wide;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Animation utilities */
+.stagger-animation > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-animation > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-animation > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-animation > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stagger-animation > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
